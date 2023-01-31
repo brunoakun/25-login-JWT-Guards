@@ -1,0 +1,26 @@
+<form class="form" [formGroup]="miForm" (click)="registro()">
+    <h3 class="text-center text-info">Nuevo usuario</h3>
+    <div class="form-group">
+        <label for="nombre" class="text-info">Nombre:</label><br>
+        <input type="text" formControlName="nombre" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="email" class="text-info">eMail:</label><br>
+        <input type="text" formControlName="email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="password" class="text-info">Password:</label><br>
+        <input type="password" formControlName="password" class="form-control">
+    </div>
+    <div class="form-group text-end mt-3 mb-3">
+        <button [disabled]="!miForm.valid" type="submit" class="btn btn-info btn-md">Enviar</button>
+    </div>
+    <hr>
+    <div>
+        <label>¿Ya tines cuenta? </label>
+        <a routerLink="/auth/login" class="ms-1 text-info">LogIn aquí</a>
+    </div>
+</form>
+
+<label>miForm.valid: {{miForm.valid}}</label>
+<pre>{{miForm.value | json}}</pre>

@@ -1,0 +1,27 @@
+<form class="form" [formGroup]="miForm" (ngSubmit)="logIn()">
+    <h3 class="text-center text-info">Login</h3>
+    <div class="form-group">
+        <label for="email" class="text-info">eMail:</label><br>
+        <input type="text" formControlName="email"   class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="password" class="text-info">Password:</label><br>
+        <input type="password" formControlName="password" class="form-control">
+    </div>
+    <div class="form-group text-end mt-3 mb-3">
+        <button [disabled]="!miForm.valid" type="submit" name="submit" class="btn btn-info btn-md">Enviar </button>
+    </div> 
+    
+     
+    <hr>
+    <div class="d-flex justify-content-between">
+        <a routerLink="/auth/registro" class="text-info">Regístate aquí</a>
+        <br>
+        <label for="remember-me" class="text-info"><span>Recordarme</span> 
+            <input id="remember-me" name="remember-me" type="checkbox">
+        </label>
+    </div>
+</form>
+
+<label>miForm.valid: {{miForm.valid}}</label>
+<pre>{{miForm.value | json}}</pre>

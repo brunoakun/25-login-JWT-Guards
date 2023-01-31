@@ -12,5 +12,9 @@ Manejo de errores
 RXJS y Operadores
 SweetAlert
 
-La idea de esta sección es que conectemos nuestro trabajo realizado en la sección anterior con Angular.
+## 1.- Estructura de directorios y navegación:
+Existen 3 routing.module.ts
+src\app\app-routing.module.ts -> PRINCIPAL
+src\app\auth\auth-routing.module.ts -> Autenticación y login
+src\app\protected\protected-routing.module.ts -> Ruta solo accesible si se está logeado
 
