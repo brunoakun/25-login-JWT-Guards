@@ -11,10 +11,13 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
 
-  miForm: FormGroup = this.fb.group({
+  public loading: boolean = false;
+
+  miForm: FormGroup = this.fb.group({ 
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(4)]],
   });
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -27,11 +30,13 @@ export class LoginComponent implements OnInit {
   logIn() {
     const email = this.miForm.value.email;
     const password = this.miForm.value.password;
+    this.loading = true;
     this._authSrv.logIn(email, password).subscribe(resp => {
+      this.loading = false;
       if (resp.error === false) {
         this.router.navigate(['/panel']);
-      } else {
-        Swal.fire('Error', resp.message, 'error');
+      } else {        
+          Swal.fire('Error', resp.mensaje , 'error'); 
       }
     })
   }

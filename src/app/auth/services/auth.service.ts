@@ -14,6 +14,13 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
 
+  registro(name: string, email: string, password: string) {
+    const url = `${this.apiUrl}/register`;
+    const body = { name, email, password };
+    return this.http.post<AuthResponse>(url, body);
+  }
+
+
   logIn(email: string, password: string) {
     this.logOut();
     const url = `${this.apiUrl}/login`;

@@ -11,6 +11,7 @@ Mantener el estado del usuario
 Manejo de errores
 RXJS y Operadores
 SweetAlert
+Toastr
 
 ## 1.- Estructura de directorios y navegación:
 Existen 3 routing.module.ts

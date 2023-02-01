@@ -13,7 +13,7 @@ export class ValidarTokenGuard implements CanActivate {
     private router: Router) { }
 
   canActivate(): Observable<boolean> | boolean {
-    console.log('TokenGuard-> canActivate()')
+    console.log('TokenGuard-> evaluando validarToken...')
     return (this._authSrv.validarToken())
       .pipe(
         tap(valid => {
